@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     
 } 
 
@@ -8,19 +8,41 @@
 .grid-container {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 0.9fr 1fr 1fr 1fr 0.9fr;
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: 0.6fr 1fr 1fr 1fr 0.6fr;
+    grid-template-rows: 0.3fr 475px 0.2fr repeat(5, 1fr);
     grid-template-areas:
-    "nav-bar nav-bar nav-bar nav-bar nav-bar"
-    ". featured-shows . . ."
-    ". datetitle . . ."
+    "g-title nav-bar nav-bar nav-bar nav-bar"
+    ". theater-image theater-image theater-image ."
+    ". datetitle datetitle datetitle ."
     ". showing-1 showing-1 showing-1 ."
     ". showing-2 showing-2 showing-2 ."
     ". showing-3 showing-3 showing-3 ."
     ". showing-4 showing-4 showing-4 ."
-    "f-map f-info f-shows f-social .";
-    row-gap: 10px;
+   ". . . . . ";
+    
+    row-gap: 0px;
 }
+
+#theater-image {
+    grid-area: theater-image;
+    width: 100%;
+    height: 455px;
+    object-fit: fill;
+    z-index: 1;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+   
+
+}
+    
+
+
+h1 {
+    color: white;
+    z-index: 1;
+    white-space: nowrap;
+    
+}
+
 .footer-grid-container {
     min-height: 35vh;
     display: grid;
@@ -47,12 +69,27 @@
     grid-area: showing-4;
   }
 
+
 .featured-shows {
-    grid-area: featured-shows;
+        position: absolute;
+        top: 65%;
+        left: 54%;
+        transform: translate(-50%, -50%);
+        font-size: 70px;
+        z-index: 2; 
+        white-space: nowrap;
+        color: white;
+        
 }
+
 
 .datetitle {
     grid-area: datetitle;
+    border: 1px solid grey;
+    margin: 10px 10px 10px 10px;
+    padding: 0 0 10px 10px;
+    border-radius: 3px;
+    
 }
 
 .nav-bar {
@@ -85,13 +122,67 @@ footer a {
 }
 
 .nav-bar {
+    grid-area: nav-bar;
     background-color: black;
-    color: white;
+    color: rgb(0, 0, 0);
     display: flex;
-    justify-content: space-evenly;
+    justify-content:flex-start;
     align-items: center;
-    padding: 0 20px;
+    overflow: hidden;
+    padding-left: 50px;
+    
+    z-index: .9; 
 }
+
+
+.nav-bar > a {
+    color: rgb(255, 255, 255);
+    padding-top: 20px;
+    padding-right: 30px;
+    white-space: nowrap;
+    z-index: 1;
+    text-decoration: none;
+    
+}
+
+a:hover {
+    color: rgb(36, 196, 245);
+    
+}
+
+.g-title {
+    grid-area: g-title;
+    margin-left: 80px;
+    padding-top: 17px;
+}
+
+.column-bg {
+    background-color: black;
+    grid-row: 1 / span 9; /* adjust this to cover the rows you want */
+}
+
+#column-1 {
+    grid-column: 1;
+    background: linear-gradient(to right, rgb(3, 134, 167), black, black, black, black,black);
+}
+
+
+
+#column-5 {
+    grid-column: 5;
+    background:  linear-gradient(to right, black, black, black, black,black, rgb(3, 134, 167));
+}
+
+.showings-box {
+    margin-bottom: 30px;
+    margin-left: 30px;
+    border: 10px solid rgb(255, 255, 255);
+}
+/* #theater-image {
+    grid-area: theater-image;
+    width: 100%;
+    height: auto;
+} */
 
 
 
