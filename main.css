@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+} 
+
+
+.grid-container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 0.9fr 1fr 1fr 1fr 0.9fr;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas:
+    "nav-bar nav-bar nav-bar nav-bar nav-bar"
+    ". featured-shows . . ."
+    ". datetitle . . ."
+    ". showing-1 showing-1 showing-1 ."
+    ". showing-2 showing-2 showing-2 ."
+    ". showing-3 showing-3 showing-3 ."
+    ". showing-4 showing-4 showing-4 ."
+    "f-map f-info f-shows f-social .";
+    row-gap: 10px;
+}
+.footer-grid-container {
+    min-height: 35vh;
+    display: grid;
+    grid-template-columns: 0.9fr 0.9fr 1fr 1fr 1fr 0.9fr;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas:
+    ". f-map f-info f-shows f-social .";
+    row-gap: 10px;
+}
+
+#showing-1 {
+    grid-area: showing-1;
+  }
+  
+#showing-2 {
+    grid-area: showing-2;
+  }
+  
+#showing-3 {
+    grid-area: showing-3;
+  }
+  
+#showing-4 {
+    grid-area: showing-4;
+  }
+
+.featured-shows {
+    grid-area: featured-shows;
+}
+
+.datetitle {
+    grid-area: datetitle;
+}
+
+.nav-bar {
+    grid-area: nav-bar;
+}
+
+.f-map {
+    grid-area: f-map;
+}
+.f-info {
+    grid-area: f-info;
+}
+
+.f-shows {
+    grid-area: f-shows;
+}
+
+.f-social {
+    grid-area: f-social;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    
+}
+
+footer a {
+    color: white;
+}
+
+.nav-bar {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+
