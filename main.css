@@ -9,7 +9,7 @@
     min-height: 100vh;
     display: grid;
     grid-template-columns: 0.6fr 1fr 1fr 1fr 0.6fr;
-    grid-template-rows: 0.3fr 475px 0.2fr repeat(5, 1fr);
+    grid-template-rows: 0.3fr 475px 0.2fr repeat(4, 1fr);
     grid-template-areas:
     "g-title nav-bar nav-bar nav-bar nav-bar"
     ". theater-image theater-image theater-image ."
@@ -17,8 +17,7 @@
     ". showing-1 showing-1 showing-1 ."
     ". showing-2 showing-2 showing-2 ."
     ". showing-3 showing-3 showing-3 ."
-    ". showing-4 showing-4 showing-4 ."
-   ". . . . . ";
+    ". showing-4 showing-4 showing-4 .";
     
     row-gap: 0px;
 }
@@ -86,11 +85,53 @@ h1 {
 .datetitle {
     grid-area: datetitle;
     border: 1px solid grey;
-    margin: 10px 10px 10px 10px;
-    padding: 0 0 10px 10px;
+    margin: 60px 10px 0px 10px;
+    padding: 0px 10px 10px 10px;
     border-radius: 3px;
+    color: rgba(0, 0, 0, 0.705);
     
 }
+
+.showings-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.showings-box img {
+    order: 1;
+    width: 200px;  
+    height: 200px; 
+    object-fit: cover; 
+    border: 5px solid rgba(34, 34, 34, 0.247);
+    border-radius: 5px;
+}
+
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+}
+
+
+.play-title, .description {
+    order: 2;
+    text-align: center;
+}
+
+
+.showings-box button {
+        order: 3;
+        background-color: rgb(255, 196, 0);
+        border: none;
+        padding: 10px 20px; /* adjust as needed */
+    }
+
+
+
 
 .nav-bar {
     grid-area: nav-bar;
